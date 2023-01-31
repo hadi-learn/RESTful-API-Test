@@ -32,6 +32,11 @@ const articleSchema = new mongoose.Schema ({
 
 const Article = new mongoose.model('Article', articleSchema)
 
+app.route('/')
+.get((req, res) => {
+    res.send(`This is RESTful API by Syukri Hadi. Go to '/articles' to see all the collections. You can perform 'GET', 'POST', 'PUT', 'PATCH', and 'DELETE' to route '/articles'. Use URLEncoded request. Document has two fields: 'title' and 'content'.`)
+})
+
 /////////////////// REQUEST FOR ALL ARTICLES //////////////////
 
 app.route('/articles')
